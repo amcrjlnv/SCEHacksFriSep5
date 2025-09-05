@@ -28,7 +28,7 @@ export function Landing() {
               <span className="text-primary">in seconds</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              MatchMate uses advanced AI to connect you with the ideal teammates based on your skills, interests, and project goals. Stop searching, start building.
+              HackATeam uses advanced AI to connect you with the ideal teammates based on your skills, interests, and project goals. Stop searching, start building.
             </p>
           </div>
           
@@ -50,11 +50,11 @@ export function Landing() {
                 <DialogHeader>
                   <DialogTitle className="flex items-center gap-2">
                     <Code2 className="h-5 w-5" />
-                    About MatchMate
+                    About HackATeam
                   </DialogTitle>
                   <DialogDescription className="text-left space-y-4">
                     <p>
-                      MatchMate is an AI-powered platform that helps hackathon participants find their ideal teammates based on:
+                      HackATeam is an AI-powered platform that helps hackathon participants find their ideal teammates based on:
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-center gap-2">
@@ -103,7 +103,7 @@ export function Landing() {
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose MatchMate?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose HackATeam?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Built by hackers, for hackers. We understand what makes great teams.
             </p>

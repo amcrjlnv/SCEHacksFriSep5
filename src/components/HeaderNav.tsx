@@ -26,7 +26,7 @@ export function HeaderNav() {
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Code2 className="h-6 w-6 text-primary" />
-	  <a href="/"><span className="font-bold text-lg text-white">MatchMate</span></a>
+	  <a href="/"><span className="font-bold text-lg text-white">HackATeam</span></a>
         </div>
         
         <Button

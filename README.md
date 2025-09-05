@@ -1,6 +1,6 @@
-# MatchMate - AI-Powered Hackathon Teammate Matching
+# HackATeam - AI-Powered Hackathon Teammate Matching
 
-MatchMate is a modern web application that helps hackathon participants find their perfect teammates using intelligent matching algorithms. Built with React, TypeScript, and Tailwind CSS.
+HackATeam is a modern web application that helps hackathon participants find their perfect teammates using intelligent matching algorithms. Built with React, TypeScript, and Tailwind CSS.
 
 ## Features
 
