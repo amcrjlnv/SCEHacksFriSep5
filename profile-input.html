@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamMatchAI Profile Setup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile-input-style.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-card">
+            <h1 class="profile-title">Tell Us About Yourself</h1>
+            <p class="profile-subtitle">Enter your details to find the best matches for your skills.</p>
+            <form class="profile-form">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g., Jane Doe" required>
+                </div>
+                <div class="input-group">
+                    <label for="skills">Skills</label>
+                    <textarea id="skills" name="skills" rows="4" placeholder="List your key programming languages, frameworks, and technologies.&#10;e.g., Python, React, Machine Learning, AWS" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="bio">Bio</label>
+                    <textarea id="bio" name="bio" rows="6" placeholder="Write a short bio about your passions, interests, and what you're looking for in a teammate."></textarea>
+                </div>
+                <button type="submit" class="save-btn">Save Profile</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
