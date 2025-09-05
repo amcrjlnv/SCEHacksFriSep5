@@ -84,6 +84,7 @@ export function Landing() {
             <div className="bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-2xl p-8 backdrop-blur-sm border border-primary/10">
               <div className="bg-background/80 rounded-lg p-6 shadow-xl">
                 <div className="text-muted-foreground text-sm mb-4">Preview</div>
+                <div className="font-bold font-lg font-white mb-4">John The Coder</div>
                 <div className="space-y-3">
                   <div className="h-4 bg-muted rounded w-3/4"></div>
                   <div className="h-4 bg-muted rounded w-1/2"></div>
