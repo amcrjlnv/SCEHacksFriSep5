@@ -179,15 +179,7 @@ export function Results() {
         <EmptyState onRefine={() => setRefineOpen(true)} />
       )}
 
-      {/* Footer Actions */}
-      <div className="flex justify-center mt-12">
-        <Button asChild variant="outline" size="lg">
-          <Link to="/match">
-            <Search className="mr-2 h-4 w-4" />
-            Start Over
-          </Link>
-        </Button>
-      </div>
+      
     </div>
   );
 }
