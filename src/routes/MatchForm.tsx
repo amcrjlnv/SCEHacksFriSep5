@@ -13,6 +13,54 @@ import { InterestChips } from '../components/InterestChips';
 import { getMatches, HACKATHONS, SKILLS, AVAILABILITY_OPTIONS } from '../lib/api';
 import { UserProfile, storage } from '../lib/storage';
 import { toast } from '@/hooks/use-toast';
+import { useNavigate } from "react-router-dom";
+import { fetchMatches, type Profile, type Match } from "../lib/api";
+import { useState } from "react";
+
+export default function MatchForm() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+
+  async function onSubmit(profile: Profile) {
+    try {
+      setLoading(true);
+      setErr(null);
+      const matches: Match[] = await fetchMatches(profile);
+      // Save for Results page (context or localStorage)
+      localStorage.setItem("mm.latestMatches", JSON.stringify(matches));
+      localStorage.setItem("mm.lastProfile", JSON.stringify(profile));
+      navigate("/results");
+    } catch (e: any) {
+      setErr(e.message ?? "Failed to fetch matches");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // render your form; on submit, build a Profile object and call onSubmit(profile)
+  return (
+    <div>
+      {/* form fields … */}
+      {err && <p className="text-red-500 text-sm">{err}</p>}
+      <button onClick={() => {
+        const profile: Profile = {
+          hackathon: "SCE 2025",
+          name: "Shresth",
+          contact: "@shresth#1234",
+          roles: ["BE"],
+          skills: ["FastAPI","MongoDB"],
+          interests: ["AI","Health"],
+          availability: "Full weekend",
+          blurb: "Excited to build something with AI!"
+        };
+        onSubmit(profile);
+      }} disabled={loading}>
+        {loading ? "Finding matches…" : "Find Matches"}
+      </button>
+    </div>
+  );
+}
 
 export function MatchForm() {
   const navigate = useNavigate();
