@@ -10,6 +10,42 @@ import { MatchForm } from './MatchForm';
 import { Match, storage } from '../lib/storage';
 import { Badge } from '@/components/ui/badge';
 import { ROLES } from '../lib/api';
+import { useEffect, useState } from "react";
+import type { Match } from "../lib/api";
+
+export default function Results() {
+  const [matches, setMatches] = useState<Match[]>([]);
+
+  useEffect(() => {
+    const raw = localStorage.getItem("mm.latestMatches");
+    if (raw) setMatches(JSON.parse(raw));
+  }, []);
+
+  return (
+    <div className="space-y-4 p-4">
+      <h1 className="text-xl font-semibold">Top Matches</h1>
+      {matches.length === 0 && <p>No matches yet. Try submitting your profile.</p>}
+      {matches.map((m, i) => (
+        <div key={i} className="rounded-xl border p-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="font-medium">{m.candidate.name}</div>
+              <div className="text-sm text-gray-500">{m.candidate.roles.join(", ")} • {m.candidate.skills.join(", ")}</div>
+              <div className="text-sm">Score: <strong>{m.score}</strong></div>
+            </div>
+            <button
+              className="text-sm underline"
+              onClick={() => navigator.clipboard.writeText(m.candidate.contact)}
+            >
+              Copy contact
+            </button>
+          </div>
+          <p className="mt-2 text-sm">{m.explanation}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 type SortOption = 'score' | 'skills' | 'interests';
 
